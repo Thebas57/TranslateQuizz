@@ -26,3 +26,16 @@ module.exports.signInErrors = (err) => {
 
   return errors;
 };
+
+//Error pour word
+module.exports.wordAddErrors = (err) => {
+  let errors = {noTranslate:"", translate:""};
+
+  if(err.code === 11000 && Object.keys(err.keyValue)[0].includes("noTranslate"))
+    errors.noTranslate = "Ce mot possède déjà une traduction";
+
+  if(err.code === 11000 && Object.keys(err.keyValue)[0].includes("translate"))
+    errors.translate = "Un mot existe déjà pour cette traduction";
+
+  return errors;
+}

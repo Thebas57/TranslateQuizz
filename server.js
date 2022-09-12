@@ -3,6 +3,7 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const userRoutes = require("./routes/user.routes");
+const wordRoutes = require("./routes/word.routes");
 
 // Permet de récupérer les variables d'env
 require("dotenv").config({ path: "./config/.env" });
@@ -28,6 +29,7 @@ app.use(cookieParser());
 
 // Routes
 app.use("/api/user", userRoutes);
+app.use("/api/word", wordRoutes);
 
 // Serveur
 app.listen(process.env.PORT, () => {

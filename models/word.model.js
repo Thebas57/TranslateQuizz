@@ -2,10 +2,6 @@ const mongoose = require("mongoose");
 
 const WordSchema = new mongoose.Schema(
   {
-    wordId: {
-      type: String,
-      required: true,
-    },
     noTranslate: {
       type: String,
       required: true,
@@ -22,11 +18,13 @@ const WordSchema = new mongoose.Schema(
       minLength: 2,
       maxLength: 50,
       lowercase: true,
+      unique: true,
     },
     language: {
       type: String,
       required: true,
       trim: true,
+      lowercase: true,
     },
   },
   {
