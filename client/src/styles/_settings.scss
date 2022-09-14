@@ -1,0 +1,25 @@
+@font-face {
+  font-family: "font-1";
+  src: url(./assets/fonts/JosefinSans-ExtraLight.ttf);
+}
+@font-face {
+  font-family: "font-2";
+  src: url(./assets/fonts/JosefinSans-Regular.ttf);
+}
+@font-face {
+  font-family: "font-3";
+  src: url(./assets/fonts/JosefinSans-Bold.ttf);
+}
+
+$color-1: #ff7b77;
+$color-2: #ffd0c4;
+$color-3: rgb(0, 22, 44);
+$color-4: #fdeeee;
+
+$font-1: "font-1", sans-serif;
+$font-2: "font-2", serif;
+$font-3: "font-3", serif;
+
+* {
+  list-style-type: none;
+}
