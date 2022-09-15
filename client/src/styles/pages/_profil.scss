@@ -1,0 +1,42 @@
+.log-container {
+  margin: 58px auto;
+
+  .form-container {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    background-color: $color-4;
+    border-radius: 20px;
+    width: 90%;
+    margin: 0 auto;
+
+    @media screen and(max-width: 885px) {
+      grid-template-columns: 1fr;
+    }
+
+    ul {
+      li {
+        cursor: pointer;
+        border-radius: 20px;
+        padding: 10px 20px;
+        transition: 0.2s;
+
+        @media screen and(max-width: 550px) {
+          width: 80%;
+          margin: 0 auto;
+        }
+      }
+      .active-btn {
+        background: $color-1;
+
+        &:hover {
+          background: $color-2;
+        }
+      }
+      li:not(.active-btn) {
+        &:hover {
+          transform: translateX(5px);
+        }
+      }
+    }
+  }
+}
