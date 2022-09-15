@@ -10,10 +10,8 @@ export default class Navbar extends Component {
             <h3>Translate Quizz</h3>
           </div>
           <ul>
-            <li>coucou</li>
-            <li>COUCOU</li>
-            <li>COUCOU</li>
-            <li>COUCOU</li>
+            <li>Bienvenue x</li>
+            <li>Déconneixno</li>
           </ul>
         </div>
       </nav>
