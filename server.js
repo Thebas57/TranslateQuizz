@@ -5,6 +5,9 @@ const bodyParser = require("body-parser");
 const userRoutes = require("./routes/user.routes");
 const wordRoutes = require("./routes/word.routes");
 
+//Midleware
+const { checkUser, requireAuth } = require("./middleware/auth.middleware");
+
 // Permet de récupérer les variables d'env
 require("dotenv").config({ path: "./config/.env" });
 require("./config/db");
@@ -26,6 +29,12 @@ app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
+
+// jwt
+app.get("*", checkUser);
+app.get("/jwtid", requireAuth, (req, res) => {
+  res.status(200).send(res.locals.user._id);
+});
 
 // Routes
 app.use("/api/user", userRoutes);
