@@ -5,11 +5,11 @@ export default class Quizz extends Component {
     return (
       <div className="quizz-container">
         <div className="title-quizz">
-          <button class="learn-more">
-            <span class="circle" aria-hidden="true">
-              <span class="icon arrow"></span>
+          <button className="learn-more">
+            <span className="circle" aria-hidden="true">
+              <span className="icon arrow"></span>
             </span>
-            <span class="button-text">Commencer le quizz</span>
+            <span className="button-text">Commencer le quizz</span>
           </button>
         </div>
       </div>

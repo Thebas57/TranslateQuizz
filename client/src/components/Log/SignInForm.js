@@ -8,8 +8,21 @@ const SignInForm = () => {
   const handleLogin = (e) => {
     e.preventDefault();
 
-    
-
+    axios({
+      method: "post",
+      url: `${process.env.REACT_APP_API_URL}api/user/login`,
+      withCredentials: true,
+      data: {
+        email: email,
+        password: password,
+      },
+    })
+      .then((res) => {
+        if (!res.data.errors) window.location = "/";
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
