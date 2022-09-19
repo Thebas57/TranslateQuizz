@@ -29,6 +29,12 @@ $font-3: "font-3", serif;
   border: none;
   text-decoration: none;
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+
 a,
 a:visited {
   color: $color-3;
@@ -38,4 +44,36 @@ a:visited {
 body {
   line-height: 1.4rem;
   font-family: $font-2;
+}
+
+input[type="submit"] {
+  background: $color-2;
+  color: $color-1;
+  font-family: $font-3;
+  cursor: pointer;
+  transition: 0.2s;
+  margin: 0;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  border-radius: 20px 6px 20px 20px;
+
+  &:hover {
+    background: $color-1;
+    color: $color-2;
+  }
+}
+input[type="checkbox"] {
+  box-shadow: none;
+  width: 20px;
+  margin: 10px 0;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+.success {
+  color: green;
+  font-weight: bold;
 }

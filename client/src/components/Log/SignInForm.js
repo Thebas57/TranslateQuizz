@@ -18,7 +18,7 @@ const SignInForm = () => {
       },
     })
       .then((res) => {
-        if (!res.data.errors) window.location = "/";
+        if (!res.data.errors) window.location = "/quizz";
       })
       .catch((err) => {
         console.log(err);
@@ -27,7 +27,6 @@ const SignInForm = () => {
 
   return (
     <form action="" method="post" onSubmit={handleLogin}>
-      <label htmlFor="email">Email</label>
       <br />
       <input
         type="text"
@@ -35,9 +34,8 @@ const SignInForm = () => {
         id="email"
         onChange={(e) => setEmail(e.target.value)}
         value={email}
+        placeholder="Email"
       />
-      <br />
-      <label htmlFor="password">Password</label>
       <br />
       <input
         type="password"
@@ -45,6 +43,7 @@ const SignInForm = () => {
         id="password"
         onChange={(e) => setPassword(e.target.value)}
         value={password}
+        placeholder="Mot de passe"
       />
       <br />
       <input type="submit" value="Se connecter" />

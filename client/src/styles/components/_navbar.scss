@@ -51,6 +51,15 @@ nav {
     }
 
     li {
+      img{
+        height: 32px;
+        width: 32px;
+        cursor: pointer;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        height: 100%;
+      }
     }
   }
 }
