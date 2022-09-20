@@ -26,6 +26,11 @@ const WordSchema = new mongoose.Schema(
       trim: true,
       lowercase: true,
     },
+    user: {
+      type: String,
+      required: true,
+      trim: true,
+    }
   },
   {
     timestamps: true,

@@ -9,11 +9,14 @@ import rootReducer from "./reducers";
 
 //DEVTOOLS
 import { composeWithDevTools } from "redux-devtools-extension";
+import { getWords } from "./actions/words.actions";
 
 const store = createStore(
   rootReducer,
   composeWithDevTools(applyMiddleware(thunk))
 );
+
+store.dispatch(getWords());
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

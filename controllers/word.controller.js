@@ -56,12 +56,22 @@ module.exports.wordSearch = async (req, res) => {
 };
 
 module.exports.addWord = async (req, res) => {
-  const { noTranslate, translate, language } = req.body;
+  const { noTranslate, translate, language, user } = req.body;
   try {
-    const word = await WordModel.create({ noTranslate, translate, language });
+    const word = await WordModel.create({ noTranslate, translate, language, user });
     res.status(201).json({ word: word._id });
   } catch (err) {
     const errors = wordAddErrors(err);
     res.status(200).send({ errors });
+  }
+};
+
+// Fonction pour récupérer tous les mots
+module.exports.getWords = async (req, res) => {
+  try {
+    const words = await WordModel.find();
+    res.status(200).json({ words });
+  } catch (err) {
+    console.log(err);
   }
 };
