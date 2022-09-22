@@ -30,6 +30,10 @@ const WordSchema = new mongoose.Schema(
       type: String,
       required: true,
       trim: true,
+    },
+    isLearn:{
+      type: Boolean,
+      default: false,
     }
   },
   {

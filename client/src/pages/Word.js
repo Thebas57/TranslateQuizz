@@ -1,16 +1,45 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addNewWord } from "../actions/post.actions";
+import { getWords } from "../actions/words.actions";
 import { isEmpty } from "../components/Utils";
 import WordHandle from "../components/Word/WordHandle";
 
 const Word = () => {
   const wordsData = useSelector((state) => state.wordsReducer);
   const [addWord, setAddWord] = useState(false);
-  console.log(wordsData);
+
+  const [word, setWord] = useState("");
+  const [traduction, setTraduction] = useState("");
+
+  const dispatch = useDispatch();
+
+  const userData = useSelector((state) => state.userReducer);
 
   //Permets d'afficher ou non l'ajout d'un mot
   const handleWord = () => {
     setAddWord(!addWord);
+  };
+
+  //Ajoute un mot
+  const newWord = async (e) => {
+    e.preventDefault();
+
+    if (word && traduction) {
+      const data = {
+        noTranslate: word,
+        translate: traduction,
+        language: "anglais",
+        user: userData._id,
+      };
+
+      await dispatch(addNewWord(data));
+      //on reset les inputs
+      setWord("");
+      setTraduction("");
+      setAddWord(false);
+      dispatch(getWords());
+    } else alert("Il manque une information");
   };
 
   return (
@@ -30,15 +59,34 @@ const Word = () => {
           <h4>Anglais</h4>
         </div>
         {addWord && (
-          <div className="flex-word">
-            <input type="text" placeholder="Entrer un mot" />
-            <img src="./img/arrow.svg" alt="arrow" />
-            <input type="text" placeholder="Traduction" />
-          </div>
+          <form action="" method="post" onSubmit={newWord}>
+            <div className="flex-word">
+              <input
+                type="text"
+                placeholder="Entrer un mot"
+                name="word"
+                id="word"
+                value={word}
+                onChange={(e) => setWord(e.target.value)}
+              />
+              <img src="./img/arrow.svg" alt="arrow" />
+              <input
+                type="text"
+                placeholder="Traduction"
+                name="traduction"
+                id="traduction"
+                value={traduction}
+                onChange={(e) => setTraduction(e.target.value)}
+              />
+            </div>
+            <input type="submit" value="Valider" />
+          </form>
         )}
         {!isEmpty(wordsData) &&
           wordsData.map((word) => {
-            return <WordHandle word={word} key={word._id} />;
+            if (!word.isLearn)
+              return <WordHandle word={word} key={word._id} />;
+            else return null;
           })}
       </div>
       <div className="word-div">
@@ -49,7 +97,9 @@ const Word = () => {
         </div>
         {!isEmpty(wordsData) &&
           wordsData.map((word) => {
-            return <WordHandle word={word} key={word._id} />;
+            if (word.isLearn)
+              return <WordHandle word={word} key={word._id} />;
+            else return null;
           })}
       </div>
     </div>
