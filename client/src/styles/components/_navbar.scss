@@ -51,7 +51,7 @@ nav {
     }
 
     li {
-      img{
+      img {
         height: 32px;
         width: 32px;
         cursor: pointer;
@@ -60,6 +60,91 @@ nav {
         justify-items: center;
         height: 100%;
       }
+
+      /* MENU : PLUS to MINUS */
+      --plus-menu-width: 30px;
+      --plus-menu-height: 6px;
+      --transition: all 0.5s cubic-bezier(0.5, 0, 0.5, 1);
+      .plus-menu {
+        cursor: pointer;
+        width: var(--plus-menu-width);
+        height: var(--plus-menu-height);
+        bottom: 5px;
+      }
+
+      .plus-menu::before {
+        position: absolute;
+        content: "";
+        background: #332d2d;
+        border-radius: 10px;
+        width: var(--plus-menu-width);
+        height: var(--plus-menu-height);
+        transition: var(--transition);
+      }
+
+      .plus-menu::after {
+        position: absolute;
+        content: "";
+        border-radius: 10px;
+        width: var(--plus-menu-width);
+        height: var(--plus-menu-height);
+        background: #332d2d;
+        transform: rotate(90deg);
+        transition: var(--transition);
+      }
+
+      .plus-menu--toggle.plus-menu::before {
+        transform: rotate(360deg);
+      }
+
+      .plus-menu--toggle.plus-menu::after {
+        transform: rotate(540deg);
+      }
+
+      .display-menu--toggle {
+        display: none;
+      }
+
+      .sub-menu {
+        ul {
+          width: 100%;
+          display: block;
+          li {
+            width: 100%;
+            font-size: 1.1rem;
+            display: flex;
+            span {
+              width: 100%;
+              display: flex;
+            }
+          }
+        }
+        position: absolute;
+        width: 10em;
+        top: 2.5em;
+        //left: 80%;
+        border-radius: 0.5em;
+        background-color: var(--neutral);
+        padding: 0.6em 1.5em;
+        box-shadow: 5px 3px 20px -2px rgba(105, 105, 105, 0.5);
+
+        @media screen and(max-width: 1198px) {
+          right: 2%;
+        }
+
+        .sub-menu-list li {
+          margin: 0.4em 0;
+        }
+
+        .sub-menu-list img {
+          height: 24px;
+          display: inline-block;
+          margin-right: 0.6em;
+          vertical-align: middle;
+        }
+      }
     }
+
+    /* MENU 2 */
   }
 }

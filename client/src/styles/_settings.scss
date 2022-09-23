@@ -11,6 +11,11 @@
   src: url(./assets/fonts/JosefinSans-Bold.ttf);
 }
 
+@font-face {
+  font-family: "font-4";
+  src: url(./assets/fonts/C4v4-Regular.woff);
+}
+
 $color-1: #ff7b77;
 $color-2: #ffd0c4;
 $color-3: rgb(0, 22, 44);
@@ -19,6 +24,7 @@ $color-4: #fdeeee;
 $font-1: "font-1", sans-serif;
 $font-2: "font-2", serif;
 $font-3: "font-3", serif;
+$font-4: "font-4", serif;
 
 * {
   margin: 0;
