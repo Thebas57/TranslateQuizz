@@ -18,7 +18,7 @@ const SignInForm = () => {
       },
     })
       .then((res) => {
-        if (!res.data.errors) window.location = "/quizz";
+        if (!res.data.errors) window.location = "/accueil";
       })
       .catch((err) => {
         console.log(err);

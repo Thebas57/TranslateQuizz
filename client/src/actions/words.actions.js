@@ -1,6 +1,7 @@
 import axios from "axios";
 
 export const GET_WORDS = "GET_WORDS";
+export const GET_QUIZZ = "GET_QUIZZ";
 
 export const getWords = (uid) => {
   return (dispatch) => {

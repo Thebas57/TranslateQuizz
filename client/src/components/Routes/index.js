@@ -7,6 +7,7 @@ import {
 import Home from "../../pages/Home";
 import Profil from "../../pages/Profil";
 import Quizz from "../../pages/Quizz";
+import Accueil from "../../pages/Accueil";
 import Word from "../../pages/Word";
 import Navbar from "../Navbar";
 
@@ -17,6 +18,7 @@ function index() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/quizz" component={Quizz} />
+        <Route exact path="/accueil" component={Accueil} />
         <Route exact path="/profil" component={Profil} />
         <Route exact path="/word" component={Word} />
         <Redirect to="/" />

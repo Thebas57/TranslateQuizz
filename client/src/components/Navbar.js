@@ -21,7 +21,7 @@ const Navbar = () => {
   return (
     <nav>
       <div className="nav-container">
-        <NavLink exact to="/">
+        <NavLink exact to={uid ? "/accueil" : "/"}>
           <div className="logo">
             <img src="./img/icon.png" alt="logo" />
             <h3>Translate Quizz</h3>
