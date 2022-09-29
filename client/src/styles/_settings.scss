@@ -83,3 +83,11 @@ input[type="checkbox"] {
   color: green;
   font-weight: bold;
 }
+
+i {
+  transition: 0.15s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}

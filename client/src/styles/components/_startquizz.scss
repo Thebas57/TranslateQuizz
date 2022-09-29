@@ -1,0 +1,101 @@
+.quizz {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 30px;
+  text-align: center;
+  padding: 20px 85px 0 85px;
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 0 auto;
+    min-height: 100px;
+    min-width: 450px;
+    background-color: transparent;
+    background-size: 100% 100%;
+    font-size: 1.3rem;
+  }
+  // Border + animation
+  div {
+    text-transform: uppercase;
+    color: #696666;
+    background: url(https://i.imgur.com/Th606mh.png) no-repeat scroll 0.75em
+      0.07em transparent;
+    background-size: 54px 204px;
+    border-radius: 2em;
+    border: 0.15em solid #ffd0c4;
+    transition: all 0.3s ease 0s;
+  }
+  div:hover {
+    color: #fff;
+    background-color: $color-1;
+    border-color: $color-1;
+    background-position: 0.75em bottom;
+    -webkit-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  div:focus {
+    background-position: 2em -4em;
+    -webkit-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+}
+
+.question-quizz {
+  text-align: center;
+  font-size: 1.8rem;
+  padding: 20px 0 50px 0;
+  span {
+    font-size: 2em;
+    text-transform: uppercase;
+    color: #696666;
+    text-decoration: underline $color-1;
+  }
+}
+
+.fa-spinner {
+  position: absolute;
+  top: 20%;
+  left: 49%;
+  font-size: 4rem;
+  color: $color-1;
+}
+
+// Progress bar
+
+.progress_bar {
+  margin: auto;
+  width: 80%;
+  max-width: 80%;
+  height: 10px;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.progress_bar:before {
+  content: "";
+  width: 200%;
+  height: 100%;
+  position: absolute;
+  animation: progress-anime 15s ease-out infinite;
+  background: linear-gradient(
+    to right,
+    $color-2 0%,
+    $color-1 50%,
+    #d2d2d2 50%,
+    #d2d2d2 100%
+  );
+}
+
+@keyframes progress-anime {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0;
+  }
+}
