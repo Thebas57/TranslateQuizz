@@ -5,6 +5,11 @@
   grid-row-gap: 30px;
   text-align: center;
   padding: 20px 85px 0 85px;
+
+  @media screen and (max-width: 885px){
+    grid-template-columns: 1fr;
+    padding: 20px 10px 0 10px;
+  }
   div {
     display: flex;
     align-items: center;
@@ -16,6 +21,11 @@
     background-color: transparent;
     background-size: 100% 100%;
     font-size: 1.3rem;
+  @media screen and(max-width: 550px) {
+    font-size: 1.4em;
+    min-height: 100px;
+    min-width: 350px;
+  }
   }
   // Border + animation
   div {
@@ -46,6 +56,14 @@
 }
 
 .question-quizz {
+  display: flex;
+  justify-content:space-evenly;
+  @media screen and(max-width: 550px) {
+    flex-direction: column;
+    font-size: 1.4em;
+    row-gap: 20px;
+  padding: 10px 0 20px 0;
+  }
   text-align: center;
   font-size: 1.8rem;
   padding: 20px 0 50px 0;
@@ -79,9 +97,9 @@
 .progress_bar:before {
   content: "";
   width: 200%;
+  animation: progress-anime 15s ease-out infinite;
   height: 100%;
   position: absolute;
-  animation: progress-anime 15s ease-out infinite;
   background: linear-gradient(
     to right,
     $color-2 0%,
@@ -89,6 +107,14 @@
     #d2d2d2 50%,
     #d2d2d2 100%
   );
+}
+
+.error-rep{
+  background-color: red !important;
+}
+
+.success-rep{
+  background-color: greenyellow !important;
 }
 
 @keyframes progress-anime {
