@@ -20,6 +20,7 @@ $color-1: #ff7b77;
 $color-2: #ffd0c4;
 $color-3: rgb(0, 22, 44);
 $color-4: #fdeeee;
+$color-5: #FF0066;
 
 $font-1: "font-1", sans-serif;
 $font-2: "font-2", serif;
@@ -90,4 +91,15 @@ i {
   &:hover {
     transform: scale(1.1);
   }
+}
+
+.hidden{
+  opacity: 0 !important;
+  transition: opacity 0.5s ease-out;
+}
+
+.sous-header {
+  border: thick double $color-2;
+  height: 20px;
+  background-color: $color-3;
 }
