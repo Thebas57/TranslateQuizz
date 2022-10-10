@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { UidContext } from "../components/AppContext";
 import Log from "../components/Log";
+import UpdateProfil from "../components/Log/UpdateProfil";
 
 const Profil = () => {
   //si l'utilisateur est connecté
@@ -11,7 +12,7 @@ const Profil = () => {
       <div className="profil-page">
         {uid ? (
           <>
-            <div>Coucou</div>
+            <UpdateProfil />
             <div className="img-profil">
               <img src="./img/log.svg" alt="log" />
             </div>
