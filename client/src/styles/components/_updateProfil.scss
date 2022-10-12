@@ -1,33 +1,36 @@
-.update-form{
-    display: flex;
-    margin: auto auto;
-    background-color: $color-4;
-    border-radius: 30px;
-    flex-direction: column;
-    text-align: center;
-    padding: 20px;
-    width: 80%;
-    input[type="email"],
-    input[type="text"],
-    input[type="password"],
-    input[type="checkbox"] {
-      background: none;
-      border: none;
-      border-bottom: 2px solid $color-1;
-      box-sizing: border-box;
-      outline: none;
-      margin: 0 0 30px 0;
-    }
-  
-    ::placeholder,
-    input {
-      line-height: 1.4rem;
-      font-family: $font-2;
-      font-size: 1rem;
-    }
-    input[type="submit"]{
-        width: 60%;
-        border-radius: 20px;
-    }
-    
+.update-form {
+  display: flex;
+  margin: auto auto;
+  background-color: $color-4;
+  border-radius: 30px;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+  width: 80%;
+  @media screen and(max-width: 1198px) {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  input[type="email"],
+  input[type="text"],
+  input[type="password"],
+  input[type="checkbox"] {
+    background: none;
+    border: none;
+    border-bottom: 2px solid $color-1;
+    box-sizing: border-box;
+    outline: none;
+    margin: 0 0 30px 0;
+  }
+
+  ::placeholder,
+  input {
+    line-height: 1.4rem;
+    font-family: $font-2;
+    font-size: 1rem;
+  }
+  input[type="submit"] {
+    width: 60%;
+    border-radius: 20px;
+  }
 }
